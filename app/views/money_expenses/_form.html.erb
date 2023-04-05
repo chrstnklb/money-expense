@@ -1,0 +1,36 @@
+<%= form_with(model: money_expense) do |form| %>
+  <% if money_expense.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(money_expense.errors.count, "error") %> prohibited this money_expense from being saved:</h2>
+
+      <ul>
+        <% money_expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid">
+    <div>
+      <%= form.label :price, style: "display: block" %>
+      <%= form.number_field :price, placeholder: "Auf ganze € aufrunden!" %>
+    </div>
+    
+    <div>
+      <%= form.label :category %>
+      <%= form.select :category, options_for_select(MoneyExpense::CATEGORIES, selected: money_expense.category) %>
+    </div>
+  </div>
+    
+  <div class="grid">
+    <div>
+      <%= form.label :comment, style: "display: block" %>
+      <%= form.text_field :comment, placeholder: "Kommentiere!" %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit "Ausgabe speichern"%>
+  </div>
+<% end %>

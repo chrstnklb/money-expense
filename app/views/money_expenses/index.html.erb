@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ausgaben</h1>
+
+<div id="money_expenses">
+  <% @money_expenses.each do |money_expense| %>
+    <%= render money_expense %>
+    <p>
+      <%= link_to "Zeige Details", money_expense %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Neue Ausgabe", new_money_expense_path %>
