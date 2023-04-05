@@ -1,24 +1,24 @@
 <div id="<%= dom_id money_expense %>">
 
-  <article>
+  <div class="container text-center">
 
-    <div class="grid">
+    <div class="row">
       
-      <div>
+      <div class="col">
         <p>
           <strong>Preis:</strong>
           <%= money_expense.price %>
         </p>
       </div>
     
-      <div>
+      <div class="col">
         <p>
           <strong>Kategorie:</strong>
           <%= money_expense.category %>
         </p>
       </div>
     
-      <div>
+      <div class="col">
         <p>
           <strong>Kommentar:</strong>
           <%= money_expense.comment %>
@@ -27,6 +27,5 @@
 
     </div>
 
-  </article>
-
+  </div>
 </div>
