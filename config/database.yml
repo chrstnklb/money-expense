@@ -27,3 +27,6 @@ production:
   <<: *default
   #database: db/production.sqlite3
   database: money_expenses
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
+
