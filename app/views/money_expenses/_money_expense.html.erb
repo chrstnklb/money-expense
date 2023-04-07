@@ -1,7 +1,17 @@
-<div id="<%= dom_id money_expense %>">
-  
-    <td><%= money_expense.price %></td>
-    <td><%= money_expense.category %></td>
-    <td><%= money_expense.comment %></td>
-  
-</div>
+
+<tr>
+<td style="width: 15%;"><%= money_expense.price %></td>
+<td style="width: 65%;"><%= money_expense.category %></td>
+<%
+=begin%>
+<td style="width: 20%;"><%= money_expense.comment %></td> 
+<%
+=end%>
+<td style="width: 20%;">
+    <div style="display: flex;">
+    <div style="width: 33%;"><%= show_expense_button(money_expense) %></div>
+    <div style="width: 33%;"><%= edit_expense_button(money_expense) %></div>
+    <div style="width: 33%;"><%= delete_expense_button(money_expense) %></div>
+    </div>
+</td>
+</tr>

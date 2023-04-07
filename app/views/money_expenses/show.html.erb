@@ -2,8 +2,8 @@
 
 <%= render @money_expense %>
 
-<div>
-  <%= link_to "Bearbeite diese Ausgabe", edit_money_expense_path(@money_expense) %> |
-  <%= back_to_expenses_button %>
-  <%= delete_expense_button(@expense) %>
+<div class="row">
+  <div class="col-2 col"><%= edit_expense_button(@money_expense) %></div>
+  <div class="col-2 col"><%= back_to_expenses_button %></div>
+  <div class="col-2 col"><%= delete_expense_button(@expense) %></div>
 </div>

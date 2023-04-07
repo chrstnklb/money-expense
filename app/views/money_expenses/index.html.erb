@@ -9,10 +9,14 @@
 
     <thead>
       <tr>
-        <th scope="col">Preis</th>
-        <th scope="col">Kategorie</th>
-        <th scope="col">Kommentar</th>
-        <th scope="col">Actions</th>
+        <th scope="col" style="widht: 15%">Preis</th>
+        <th scope="col" style="widht: 65%">Kategorie</th>
+        <%
+=begin%>
+ <th scope="col" style="widht: 20%">Kommentar</th> 
+<%
+=end%>
+        <th scope="col" style="widht: 20%">Actions</th>
       </tr>
     </thead>
 
@@ -21,11 +25,6 @@
       
      <tr>
         <%= render expense %>
-
-        <td>
-          <%= button_to "Zeige Detail", expense, method: :get, class: "contrast outline btn-small btn-secondary", role: "button" %>
-          <%= delete_expense_button(expense) %>
-        </td>
       </tr> 
     </tbody>
 
