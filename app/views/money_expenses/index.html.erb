@@ -2,13 +2,34 @@
 
 <h1>Ausgaben</h1>
 
+<%= button_to "Neue Ausgabe", new_money_expense_path, method: :get, class: "contrast outline btn-small btn-success", role: "button" %>
+
 <div id="money_expenses">
-  <% @money_expenses.each do |money_expense| %>
-    <%= render money_expense %>
-    <p>
-      <%= link_to "Zeige Details", money_expense %>
-    </p>
-  <% end %>
+  <table>
+
+    <thead>
+      <tr>
+        <th scope="col">Preis</th>
+        <th scope="col">Kategorie</th>
+        <th scope="col">Kommentar</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @money_expenses.each do |expense| %>
+      
+     <tr>
+        <%= render expense %>
+
+        <td>
+          <%= button_to "Zeige Detail", expense, method: :get, class: "contrast outline btn-small btn-secondary", role: "button" %>
+          <%= delete_expense_button(expense) %>
+        </td>
+      </tr> 
+    </tbody>
+
+    <% end %>
+  </table>
 </div>
 
-<%= link_to "Neue Ausgabe", new_money_expense_path %>

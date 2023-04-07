@@ -4,7 +4,6 @@
 
 <div>
   <%= link_to "Bearbeite diese Ausgabe", edit_money_expense_path(@money_expense) %> |
-  <%= link_to "Zurück zu Ausgaben", money_expenses_path %>
-
-  <%= button_to "Lösche diese Ausgabe", @money_expense, method: :delete %>
+  <%= back_to_expenses_button %>
+  <%= delete_expense_button(@expense) %>
 </div>
